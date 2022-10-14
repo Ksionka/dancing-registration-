@@ -26,7 +26,7 @@ module.exports = {
 }
 
 
-//const { Sequelize, DataTypes } = require('sequelize')  // перейменування назв(Identifier 'Sequelize'/'DataTypes ' has already been declared) рядки 31, 33, 35, 82
+
 
 const sequel = new Sequelize('postgres://postgres:postgres@localhost:5433/classes')
 
@@ -66,7 +66,7 @@ const Class = sequelize.define('Class', {
         type: DataTypes.ENUM,
         values: ['beginner', 'advanced', 'professional']
     },
-    style: {                                            //вказувати style в цій таблиці, коли є в іншій
+    style: {                                            
         type: DataTypes.STRING,
         allowNull: false
     }
@@ -75,7 +75,7 @@ const Class = sequelize.define('Class', {
     schema: 'app'
 }); 
 
-Class.hasOne(Style, {                                 // хто від кого ?  записувати всередині чи окремо
+Class.hasOne(Style, {                                 
     foreignKey: 'StyleId'
   });
 Style.hasOne(Class);

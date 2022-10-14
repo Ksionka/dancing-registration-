@@ -109,7 +109,7 @@ app.post('/Classes', (req, res) => {
     start: req.body.start,
     end: req.body.end,
     timetable: req.body.timetable,
-    level: req.body.level             //   недописувала style
+    level: req.body.level             
 
   }).then((Class) => {
     res.send({
