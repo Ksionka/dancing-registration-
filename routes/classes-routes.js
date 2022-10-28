@@ -1,19 +1,19 @@
 const { 
-    createClassesController,
-    updateStylesController,
-    getAllStylesController,
-    getOneStylesController,
-    deleteStylesController
-  } = require('./controllers/classes')
+  createClassController,
+  updateClassController,
+  getAllClassesController,
+  getOneClassController,
+  deleteClassController,
+} = require('./controllers/classes')
 
-  function initClassesRoutes(app) {
-    app.post('/Classes', updateClassesController),
-    app.get('/Classes', getAllClassesController),
-    app.get('/Classes/:id', getOneClassesController),
-    app.put('/Classes/:id', updateClassesController),
-    app.delete('/Classes/:id', deleteClassesController)
+function initClassesRoutes(app) {
+  app.post('/Classes', createClassController)
+  app.get('/Classes', getAllClassesController)
+  app.get('/Classes/:id', getOneClassController)
+  app.put('/Classes/:id', updateClassController)
+  app.delete('/Classes/:id', deleteClassController)
   }
 
-  module.exports = {
-    initClassesRoutes
-  }
+module.exports = {
+  initClassesRoutes,
+}

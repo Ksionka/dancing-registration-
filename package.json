@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "run-dev": "npx nodemon index.js"
+    "run-dev": "npx nodemon index.js, node sync-db.js "
                
   },
   "repository": {

@@ -1,5 +1,6 @@
 const { Class } = require('../../db')
-function updateClassesController(req, res) {
+
+function updateClassController(req, res) {
   const { id } = req.params
   const { title } = req.body
   const { teacher } = req.body
@@ -8,21 +9,21 @@ function updateClassesController(req, res) {
   const { timetable } = req.body
   const { level } = req.body
 
-    Class.update({
+  Class.update({
     title,
     teacher,
     start,
     end,
     timetable,
-    level
+    level,
   }, {
     where: {
-      id
+      id,
     }
   }).then((result) => {
     if (result[0]) {
       res.send({
-        message: "Class has been changed!",
+        message: 'Class has been changed!',
         Class: result[1]
       })
 
@@ -30,11 +31,11 @@ function updateClassesController(req, res) {
     }
     
     res.send({
-      message: "Class has been not changed!",
+      message: 'Class has been not changed!',
     })
   })
 }
 
 module.exports = {
-    updateClassesController
+  updateClassController,
 }

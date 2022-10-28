@@ -1,13 +1,13 @@
-const { createStylesController } = require('./create-styles-controller')
-const { updateStylesController } = require('./update-styles-controller')
+const { createStyleController } = require('./create-styles-controller')
+const { updateStyleController } = require('./update-styles-controller')
 const { getAllStylesController } = require('./get-all-styles-controller')
-const { getOneStylesController } = require('./get-one-styles-controller')
-const { deleteStylesController } = require('./delete-styles-controller')
+const { getOneStyleController } = require('./get-one-styles-controller')
+const { deleteStyleController } = require('./delete-styles-controller')
 
 module.export = {
-    createStylesController,
-    updateStylesController,
-    getAllStylesController,
-    getOneStylesController,
-    deleteStylesController
+  createStyleController,
+  updateStyleController,
+  getAllStylesController,
+  getOneStyleController,
+  deleteStyleController,
 }

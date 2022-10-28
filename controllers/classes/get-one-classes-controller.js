@@ -1,16 +1,12 @@
 const { Class } = require('../../db')
-const Classes = []
-function getClassById(id) {
-  return Classes.find((item) => item.id === Number(id))
-}
 
-function getOneClassesController(req, res) {
-    const { id } = req.params
+function getOneClassController(req, res) {
+  const { id } = req.params
 
-  Class.findByPk(id,{ include: Style}).then((Class) => {
-    if (Class === null) {
+  Class.findByPk(id, { include: Style }).then((item) => {
+    if (item === null) {
       res.send({
-        message: "Style has not been found!",
+        message: 'Style has not been found!',
       })
 
       return
@@ -21,5 +17,5 @@ function getOneClassesController(req, res) {
 }
 
 module.exports = {
-    getOneClassesController
+  getOneClassController,
 }

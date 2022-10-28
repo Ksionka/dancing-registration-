@@ -1,18 +1,18 @@
 const { Style } = require('../../db')
-function updateStylesController (req, res) {
-    const { id } = req.params
+function updateStyleController (req, res) {
+  const { id } = req.params
   const { title } = req.body
 
   Style.update({
-    title
+    title,
   }, {
     where: {
-      id
+      id,
     }
   }).then((result) => {
     if (result[0]) {
       res.send({
-        message: "Style has been changed!",
+        message: 'Style has been changed!',
         Style: result[1]
       })
 
@@ -20,11 +20,11 @@ function updateStylesController (req, res) {
     }
     
     res.send({
-      message: "Style has been not changed!",
+      message: 'Style has been not changed!',
     })
   })
 }
 
 module.export = {
-    updateStylesController
+  updateStyleController,
 }

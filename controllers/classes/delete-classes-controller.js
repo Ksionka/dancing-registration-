@@ -1,18 +1,19 @@
 const { Class } = require('../../db')
-function deleteClassesController(req, res) {
-    const { id } = req.params
+
+function deleteClassController(req, res) {
+  const { id } = req.params
 
   Class.destroy({
     where: {
-      id
+      id,
     }
   }).then(() => {
     res.send({
-      message: "Class has been deleted!"
+      message: 'Class has been deleted!'
     })
   })
 }
 
 module.exports = {
-    deleteClassesController
+  deleteClassController,
 }
